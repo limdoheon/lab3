@@ -1,0 +1,17 @@
+/* 프로세스 생성 프로그램
+ * forkprocess.c */
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main(){
+	pid_t pid;
+	printf("Calling fork \n");
+	pid = fork();
+	if(pid == 0)
+		printf("I'm the child process\n");
+	else if(pid>0)
+		printf("I'm the parent process\n");
+	else
+		printf("fork failed\n");
+}
